@@ -70,6 +70,7 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
             
             this.loadTemplateWidget();
             this.loadAutolevelWidget();
+            this.load3dViewWidget();
             
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
@@ -160,7 +161,58 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
                 );
               }
             );
-        },        
+        },   
+                /**
+         * Load autolevel widget chilipeppr.load() so folks have a sample
+         * widget they can fork as a starting point for their own.
+         */
+        load3dViewWidget: function(callback) {
+            chilipeppr.load(
+                "#com-chilipeppr-3dviewer-instance",
+                //"http://fiddle.jshell.net/chilipeppr/y3HRF/show/light/",
+                "http://raw.githubusercontent.com/chilipeppr/widget-3dviewer/master/auto-generated-widget.html",
+    
+                function() {
+                    console.log("got callback done loading 3d");
+    
+                    cprequire(
+                        ['inline:com-chilipeppr-widget-3dviewer'],
+    
+                        function(threed) {
+                            console.log("Running 3dviewer");
+                            threed.init();
+                            console.log("3d viewer initted");
+    
+                            // Ok, do someting whacky. Try to move the 3D Viewer 
+                            // Control Panel to the center column
+                            setTimeout(function() {
+                                var element = $('#com-chilipeppr-3dviewer .panel-heading').detach();
+                                $('#com-chilipeppr-3dviewer').addClass("noheight");
+                                $('#com-chilipeppr-widget-3dviewer').addClass("nomargin");
+                                $('#com-chilipeppr-3dviewer-controlpanel').append(element);
+                            }, 10);
+    
+                            // listen to resize events so we can resize our 3d viewer
+                            // this was done to solve the scrollbar residue we were seeing
+                            // resize this console on a browser resize
+                            var mytimeout = null;
+                            $(window).on('resize', function(evt) {
+                                //console.log("3d view force resize");
+                                if (mytimeout !== undefined && mytimeout != null) {
+                                    clearTimeout(mytimeout);
+                                    //console.log("cancelling timeout resize");
+                                }
+                                mytimeout = setTimeout(function() {
+                                    console.log("3d view force resize. 1 sec later");
+                                    threed.resize();
+                                }, 1000);
+    
+                            });
+                        }
+                    );
+                }
+            ); //End 3D Viewer
+        }, 
         
         /**
          * Load the Serial Port JSON Server widget via chilipeppr.load()
