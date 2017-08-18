@@ -70,8 +70,7 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
             
             this.loadTemplateWidget();
             this.loadAutolevelWidget();
-            this.load3dViewWidget();
-            
+
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
             // Add our billboard to the menu (has name, url, picture of workspace)
@@ -138,28 +137,6 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
                         }
                     );
                 }
-            );
-        },
-        /**
-         * Load autolevel widget chilipeppr.load() so folks have a sample
-         * widget they can fork as a starting point for their own.
-         */
-        loadAutolevelWidget: function(callback) {
-
-            chilipeppr.load(
-              "#mywidget1-instance",
-              "http://raw.githubusercontent.com/PyroAVR/widget-super-touchplate/master/auto-generated-widget.html",
-              function() {
-                // Callback after widget loaded into #myDivWidgetInsertedInto
-                cprequire(
-                  ["inline:com-chilipeppr-widget-super-touchplate"], // the id you gave your widget
-                  function(mywidget) {
-                    // Callback that is passed reference to your newly loaded widget
-                    console.log("My widget just got loaded.", mywidget);
-                    mywidget.init();
-                  }
-                );
-              }
             );
         },
         /**
@@ -280,6 +257,21 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
                         });
                     });
                 });
+            chilipeppr.load(
+              "#com-mysupertouchplate",
+              "http://raw.githubusercontent.com/PyroAVR/widget-super-touchplate/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivWidgetInsertedInto
+                cprequire(
+                  ["inline:com-chilipeppr-widget-super-touchplate"], // the id you gave your widget
+                  function(mywidget) {
+                    // Callback that is passed reference to your newly loaded widget
+                    console.log("My widget just got loaded.", mywidget);
+                    mywidget.init();
+                  }
+                );
+              }
+            );                
 
             // Auto-Leveller
             // com-chilipeppr-ws-autolevel
