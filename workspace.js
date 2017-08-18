@@ -69,6 +69,7 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
             });
             
             this.loadTemplateWidget();
+            this.loadAutolevelWidget();
             
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
@@ -139,13 +140,13 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
             );
         },
         /**
-         * Load the Template widget via chilipeppr.load() so folks have a sample
+         * Load autolevel widget chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
         loadAutolevelWidget: function(callback) {
 
             chilipeppr.load(
-              "#com-chilipeppr-widget-autolevel-instance",
+              "#mywidget1-instance",
               "http://raw.githubusercontent.com/PyroAVR/widget-super-touchplate/master/auto-generated-widget.html",
               function() {
                 // Callback after widget loaded into #myDivWidgetInsertedInto

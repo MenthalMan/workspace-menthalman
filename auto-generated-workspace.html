@@ -161,6 +161,7 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
             });
             
             this.loadTemplateWidget();
+            this.loadAutolevelWidget();
             
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
@@ -231,13 +232,13 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
             );
         },
         /**
-         * Load the Template widget via chilipeppr.load() so folks have a sample
+         * Load autolevel widget chilipeppr.load() so folks have a sample
          * widget they can fork as a starting point for their own.
          */
         loadAutolevelWidget: function(callback) {
 
             chilipeppr.load(
-              "#com-chilipeppr-widget-autolevel-instance",
+              "#mywidget1-instance",
               "http://raw.githubusercontent.com/PyroAVR/widget-super-touchplate/master/auto-generated-widget.html",
               function() {
                 // Callback after widget loaded into #myDivWidgetInsertedInto
@@ -365,7 +366,7 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
 
                     <div class="com-chilipeppr-ws-hdr well">
                         
-                        Workspace - menthalman
+                        Workspace - Sample
 
                         <div class="com-chilipeppr-ws-menu pull-right">
                             <div class="btn-group">
@@ -388,10 +389,10 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
                     </div>
 
                     <div id="mywidget1-instance">
-                        <p class="sample">Widget Autolevel goes here</p>
+                        <p class="sample">Widget 1 goes here</p>
                     </div>
                     
-                    <div id="com-chilipeppr-widget-autolevel-instance">
+                    <div id="com-chilipeppr-widget-template-instance">
                         <p class="sample">Template Widget goes here</p>
                     </div>
 
