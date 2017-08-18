@@ -69,7 +69,7 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
             });
             
             this.loadTemplateWidget();
-            this.loadAutolevelWidget();
+            this.loadWidgets();
 
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
@@ -258,20 +258,28 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
                     });
                 });
             chilipeppr.load(
-              "#com-mysupertouchplate",
+              "#com-chilipeppr-ws-super-touchplate",
               "http://raw.githubusercontent.com/PyroAVR/widget-super-touchplate/master/auto-generated-widget.html",
-              function() {
-                // Callback after widget loaded into #myDivWidgetInsertedInto
-                cprequire(
-                  ["inline:com-chilipeppr-widget-super-touchplate"], // the id you gave your widget
-                  function(mywidget) {
-                    // Callback that is passed reference to your newly loaded widget
-                    console.log("My widget just got loaded.", mywidget);
-                    mywidget.init();
-                  }
-                );
-              }
-            );                
+                function() {
+                    require(["inline:com-chilipeppr-widget-super-touchplate"], function(supertouch) {
+                        supertouch.init();
+                        // setup toggle button
+                        var stBtn = $('#com-chilipeppr-ws-gcode-menu .supertouch-button');
+                        var stDiv = $('#com-chilipeppr-ws-super-touchplate');
+                        stBtn.click(function() {
+                            if (stDiv.hasClass("hidden")) {
+                                // unhide
+                                stDiv.removeClass("hidden");
+                                stBtn.addClass("active");
+                            }
+                            else {
+                                stDiv.addClass("hidden");
+                                stBtn.removeClass("active");
+                            }
+                            $(window).trigger('resize');
+                        });
+                    });
+                });            
 
             // Auto-Leveller
             // com-chilipeppr-ws-autolevel

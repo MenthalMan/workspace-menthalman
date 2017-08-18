@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -15,77 +14,149 @@
     <script type='text/javascript' src="//i2dcui.appspot.com/js/require.js"></script>
 
     <style type='text/css'>
-/* Workspace CSS */
-
-.sample {
-    border:2px silver dashed;
-    border-radius:4px;
-    padding:10px;
+.zipwhip-button {
+    line-height:0px;
+    padding: 1px 2px;
 }
-
-.com-chilipeppr-ws-hdr {
-    padding:10px 15px;
+.zipwhip {
+    background: url('http://www.zipwhip.com/resources/images/favicon.ico') no-repeat top left;
+    display: inline-block;
+    margin: 1px 0;
+    height: 16px;
+    width: 16px;
+    /* line-height:0px; */
+    background-size: 16px 16px;
+    /* -webkit-background-size: 50% 50%; Safari
+    -khtml-background-size: 50% 50%; Konqueror
+    -moz-background-size: 50% 50%; Firefox */
 }
-
-.col-pad10 {
-    padding-left:5px;
-    padding-right:5px;
+#com-chilipeppr-ws-gcode-wrapper .dropdown-menu {
+    /* z-index:6; */
+    /* position:inherit; */
 }
-.col-nopadrt {
-    padding-right:0;    
+#com-chilipeppr-ws-gcode-wrapper .panel-heading {
+    /* padding: 10px 12px; */
 }
-
-.col-nopadleft {
-    padding-left:0;    
+#com-chilipeppr-ws-gcode-wrapper .well.com-chilipeppr-ws-hdr {
+    /* padding: 10px 15px; */
 }
-/* Feel free to remove this css tag to change the margin below the widgets */
-.well, div.panel.panel-default {
+#com-chilipeppr-ws-gcode-dragdrop {
+    margin-right:6px;
+}
+#com-chilipeppr-ws-gcode-hdr {
     margin-bottom:10px;
 }
-
-.billboard-content {
-    padding: 6px 20px;
+.panel {
+    margin-bottom:10px;
 }
-.billboard-title {
-    margin-bottom:6px;
+#com-chilipeppr-ws-gcode-wrapper #com-chilipeppr-widget-gcode-body {
+    /* max-height:250px; */
+    height:250px;
 }
-.billboard-url {
-    /* font-size: 9px; */
-    padding-top:0px;
-    margin-bottom:6px;
-    font-size:12px;
+#com-chilipeppr-ws-gcode-wrapper .com-chilipeppr-widget-spconsole {
+    margin-bottom:0;
 }
-.billboard-img {
-    border:0px solid red;
-    border-radius: 5px;
-    position: relative;
-    width:100%;
-    height:160px;
-    background-position: center;
-    background-size: cover;
-}
-.billboard-imgcontain {
-    border:0px solid red; 
-    position: relative;
-}
-.billboard-stats {
+#com-chilipeppr-ws-gcode-dragdropoverlay {
     position: absolute;
-    top: 4px;
-    left: 10px;
-}
-.billboard-desc {
-    /* font-size:11px; */
-}
-.billboard-detail-title {
-    font-weight: bold;
-}
-.billboard-stats2 {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    padding: 4px 10px 10px 10px;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:10;
     background-color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    padding:100px;
+    border: 3px dashed #3276b1;
+    text-align:center;
+    pointer-events: none;
+}
+#com-chilipeppr-ws-gcode-dragdropoverlay .well {
+    background-color: rgba(127, 127, 127, 0.5);
+}
+#com-chilipeppr-ws-gcode-wrapper.hover {
+    /* background-color: blue; */
+}
+.com-chilipeppr-elem-dragdrop {
+    /* border: 1px dashed gray; */
+    /* border-radius: 4px; */
+    padding:0;
+    margin-right:6px;
+}
+.padrt {
+    padding-right:10px;
+}
+.zhigh {
+    /* z-index:5; */
+    position:relative;
+}
+#com-chilipeppr-ws-gcode-wrapper .dropdown-menu {
+    /* z-index:20; */
+}
+#mainnav {
+    z-index:5;
+}
+.nopadding {
+    padding:0;
+}
+#com-chilipeppr-widget-3dviewer .panel-heading, #com-chilipeppr-3dviewer-controlpanel .panel-heading {
+    background:none;
+    /* border:none; */
+    padding:10px 15px;
+    margin-bottom:0;
+}
+#com-chilipeppr-3dviewer-controlpanel {
+    padding:0 10px;
+    float:left;
+}
+#com-chilipeppr-gcode-list {
+    /* padding-right: 10px; */
+    /* z-index:5; */
+    /* position: relative; */
+}
+#com-chilipeppr-serialport-ws-hdr {
+    /* z-index:5; */
+}
+.well.com-chilipeppr-ws-hdr {
+    padding:10px 15px;
+    /* padding:8px; */
+    /* padding-left:15px; */
+    /* margin:0; */
+    /* margin-bottom:10px; */
+}
+#chilipeppr-3dviewer {
+    /* z-index: -1; */
+    padding-right:10px;
+}
+#com-chilipeppr-widget-3dviewer-renderArea {
+    /* z-index:0; */
+}
+.row .widget {
+    margin:0;
+    padding:0;
+}
+.dropArea.hover {
+    background: #dddddd;
+}
+#pnlWorkspace.hover {
+    background: red;
+}
+body.hover {
+    background: #5bc0de;
+}
+#chilipeppr-serialport-wrapper .com-chilipeppr-widget-serialport-spselector {
+    max-height: none;
+}
+#chilipeppr-serialport-log {
+    /*height:200px;*/
+    /* padding-right:10px; */
+    /* z-index:5; */
+    /* position: relative; */
+}
+.nomargin {
+    margin:0;
+}
+.noheight {
+    height:0;
 }
     </style>
 
@@ -162,7 +233,7 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
             });
             
             this.loadTemplateWidget();
-            this.loadAutolevelWidget();
+            this.loadWidgets();
 
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
@@ -351,20 +422,28 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
                     });
                 });
             chilipeppr.load(
-              "#com-mysupertouchplate",
+              "#com-chilipeppr-ws-super-touchplate",
               "http://raw.githubusercontent.com/PyroAVR/widget-super-touchplate/master/auto-generated-widget.html",
-              function() {
-                // Callback after widget loaded into #myDivWidgetInsertedInto
-                cprequire(
-                  ["inline:com-chilipeppr-widget-super-touchplate"], // the id you gave your widget
-                  function(mywidget) {
-                    // Callback that is passed reference to your newly loaded widget
-                    console.log("My widget just got loaded.", mywidget);
-                    mywidget.init();
-                  }
-                );
-              }
-            );                
+                function() {
+                    require(["inline:com-chilipeppr-widget-super-touchplate"], function(supertouch) {
+                        supertouch.init();
+                        // setup toggle button
+                        var stBtn = $('#com-chilipeppr-ws-gcode-menu .supertouch-button');
+                        var stDiv = $('#com-chilipeppr-ws-super-touchplate');
+                        stBtn.click(function() {
+                            if (stDiv.hasClass("hidden")) {
+                                // unhide
+                                stDiv.removeClass("hidden");
+                                stBtn.addClass("active");
+                            }
+                            else {
+                                stDiv.addClass("hidden");
+                                stBtn.removeClass("active");
+                            }
+                            $(window).trigger('resize');
+                        });
+                    });
+                });            
 
             // Auto-Leveller
             // com-chilipeppr-ws-autolevel
@@ -1644,7 +1723,7 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
                             data-trigger="hover" data-delay="100">Auto-Level</button>
                             <!-- </div>
                         <div class="btn-group"> -->
-                            <button type="button" class="btn btn-xs btn-default superlevel-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Super Touch Plate."
+                            <button type="button" class="btn btn-xs btn-default supertouch-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Super Touch Plate."
                             data-trigger="hover" data-delay="100">Super-Touchplate</button>
                             <!-- </div>                            
                         <div class="btn-group"> -->
@@ -1658,8 +1737,6 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
                             <button type="button" class="btn btn-xs btn-default shuttlexpress-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="ShuttleXpress Jog Dial." data-trigger="hover" data-delay="100">ShuttleXpress</button>
                             <button type="button" class="btn btn-xs btn-default touchplate-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Use a touch plate to easily figure out your Z zero of your workpiece and set it." data-trigger="hover"
                             data-delay="100">Touch Plate</button>
-                            <button type="button" class="btn btn-xs btn-default touchplate-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Use a touch plate to easily figure out your Z zero of your workpiece and set it." data-trigger="hover"
-                            data-delay="100">Touch Plate</button>
                             <!-- </div>
                         <div class="btn-group"> -->
                             <!-- </div> -->
@@ -1670,7 +1747,7 @@ cpdefine("inline:com-chilipeppr-workspace-menthalman", ["chilipeppr_ready"], fun
                     <!-- Auto Leveller -->
                     <div class="zhigh hidden" id="com-chilipeppr-ws-autolevel">Auto-Level Here</div>
                     <!-- Super-Touch -->
-                    <div class="zhigh hidden" id="#com-mysupertouchplate">Auto-Level Here</div>
+                    <div class="zhigh hidden" id="com-chilipeppr-ws-super-touchplate">Super Touchplate Here</div>
                     <!-- Macro -->
                     <div class="zhigh hidden" id="com-chilipeppr-ws-macro">Macro Here</div>
                     <!-- JScut -->
